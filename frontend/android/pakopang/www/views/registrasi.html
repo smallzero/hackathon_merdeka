@@ -1,0 +1,46 @@
+<ion-view tittle="Pakopang - Pantau Komoditas Pangan">
+	<ion-header-bar align-title="center" class="bar-positive">
+		<div class="buttons">
+			<button class="button icon ion-navicon" ng-click="doSetting()"></button>
+		</div>
+		<h1 class="title">Pakopang - Pantau Komoditas Pangan</h1>
+	</ion-header-bar>
+	<ion-content ng-controller="RegistrasiController">
+		<div class="card">
+			<div class="item item-divider">
+				Registrasi
+			</div>
+			<div class="item item-text-wrap">
+				<div class="list">
+					<label class="item item-input">
+						<span class="input-label">Username</span>
+						<input type="text" ng-model="username">
+					</label>
+					<label class="item item-input">
+						<span class="input-label">Email</span>
+						<input type="email" ng-model="email">
+					</label>
+					<label class="item item-input">
+						<span class="input-label">Password</span>
+						<input type="password" ng-model="password01">
+					</label>
+					<label class="item item-input">
+						<span class="input-label">Ulang Password</span>
+						<input type="password" ng-model="password02">
+					</label>
+					
+					<div align="center"><strong style="color:green">{{ message }} </strong></div>
+					<div align="center" ng-show="loading"> Loading
+						<ion-spinner icon="lines"></ion-spinner>
+					</div>
+					<label class="item item-input">
+						<button class="button button-block button-positive" ng-click="btnRegistrasi()">Registrasi</button>
+					</label>
+					<label class="item item-input">
+						<button class="button button-block button-positive" ng-click="btnKembali()">Kembali</button>
+					</label>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

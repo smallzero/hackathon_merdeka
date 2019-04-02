@@ -1,0 +1,76 @@
+<ion-view tittle="Pakopang - Pantau Komoditas Pangan">
+	<ion-header-bar align-title="center" class="bar-positive">
+		<div class="buttons">
+			<button class="button icon ion-navicon" ng-click="doSetting()"></button>
+		</div>
+		<h1 class="title">Pakopang - Pantau Komoditas Pangan</h1>
+	</ion-header-bar>
+	<ion-content ng-controller="ReportHargaController">
+		<div class="card">
+			<div class="item item-divider">
+				Lapor Harga Komoditas
+			</div>
+			<div class="item item-text-wrap">
+				<div class="list">
+					<label class="item item-input item-select">
+						<span class="input-label">Pilih Jenis Pusat Komoditas</span>
+						<select ng-model="jenisPusatKomoditas">
+							<option value="Pusat Produksi" selected="selected">Pusat Produksi</option>
+							<option value="Pusat Pasar">Pusat Pasar</option>
+						</select>
+						<br/>
+					</label>
+					<label class="item item-input">
+						<span class="input-label">Nama Komoditas</span>
+						<input type="text" placeholder="Cari Komoditas" ng-model="namaKomoditasTxt" ng-change="getNamaKomoditas()">
+						<i class="icon ion-search placeholder-icon"></i>
+
+					</label>
+					<div ng-repeat="komoditas in namaKomoditasList">
+						<a class="item" ng-click="selectKomoditas(komoditas)"><i class="icon ion-android-arrow-dropright"></i>&nbsp;&nbsp;{{ komoditas.nama }}</a>
+					</div>
+					<label class="item item-input">
+						<span class="input-label">Harga</span>
+						<input type="number" ng-model="harga">
+					</label>
+					<label class="item item-input">
+						<span class="input-label">Per Satuan</span>
+						<input type="text" ng-model="hargaPersatuan"><small>(*contoh : 1/kg, 100/kg, 1/liter, dll.</small>
+					</label>
+					<label class="item item-input">
+						<span class="input-label">Stok</span>
+						<input type="number" ng-model="stok">
+					</label>
+					<label class="item item-input">
+						<span class="input-label">Satuan</span>
+						<input type="text" ng-model="namaSatuanTxt" ng-change="getNamaSatuan()">
+						<i class="icon ion-search placeholder-icon"></i>
+
+					</label>
+					<div ng-repeat="satuan in namaSatuanList">
+						<a class="item" ng-click="selectSatuan(satuan)"><i class="icon ion-android-arrow-dropright"></i>&nbsp;&nbsp;{{ satuan.nama }}</a>
+					</div>
+					<label class="item item-input">
+						<span class="input-label">Lokasi</span>
+						<input type="text" ng-model="namaLokasiTxt" ng-change="getNamaLokasi()">
+						<i class="icon ion-search placeholder-icon"></i>
+
+					</label>
+					<div ng-repeat="lokasi in namaLokasiList">
+						<a class="item" ng-click="selectLokasi(lokasi)"><i class="icon ion-android-arrow-dropright"></i>&nbsp;&nbsp;{{ lokasi.nama }}</a>
+					</div>
+					<div align="center"><strong style="color:green">{{ message }} </strong></div>
+					<div align="center" ng-show="loading"> Loading
+						<ion-spinner icon="lines"></ion-spinner>
+					</div>
+					<label class="item item-input">
+						<button class="button button-block button-positive" ng-click="btnSimpan()">Simpan</button>
+					</label>					
+					<label class="item item-input">
+						<button class="button button-block button-positive" ng-click="btnKembali()">Kembali</button>
+					</label>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

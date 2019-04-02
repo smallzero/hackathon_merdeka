@@ -1,0 +1,76 @@
+<ion-view tittle="Pakopang - Pantau Komoditas Pangan">
+	<ion-header-bar align-title="center" class="bar-positive">
+		<div class="buttons">
+			<button class="button icon ion-navicon" ng-click="doSetting()"></button>
+		</div>
+		<h1 class="title">Pakopang - Pantau Komoditas Pangan</h1>
+	</ion-header-bar>
+	<ion-content ng-controller="DashboardTableController">
+		<div class="card">
+			<div class="item item-divider">
+				Informasi Harga Normal Komoditas <strong style="color:green">NASIONAL</strong> Hari Ini {{ dateToday | date: 'dd/mm/yyyy'}}
+			</div>
+			<div class="item item-text-wrap">
+				<div class="row">
+					<div class="col col-10" align="left"><b>No</b></div>
+					<div class="col" align="left"><b>Komoditas</b></div>
+					<div class="col" align="right"><b>Harga (Rp.)</b></div>
+					<div class="col" align="center"><b>Satuan</b></div>
+				</div>
+				<div class="row" ng-repeat="hargaPemerintah in hargaPemerintahList">
+					<div class="col col-10" align="left">{{ ($index+1) }}</div>
+					<div class="col" align="left">{{ hargaPemerintah.komoditas.nama}}</div>
+					<div class="col" align="right">{{ hargaPemerintah.harga |currencyIDR }}</div>
+					<div class="col" align="center">1/{{ hargaPemerintah.satuan.nama }}</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="item item-divider">
+				Informasi Harga Komunitas di Centra Produksi <strong style="color:green">NASIONAL</strong> Hari Ini {{ dateToday | date: 'dd/mm/yyyy'}}
+			</div>
+			<div class="item item-text-wrap">
+				<div class="row">
+					<div class="col col-10" align="left"><b>No</b></div>
+					<div class="col" align="left"><b>Komoditas</b></div>
+					<div class="col" align="right"><b>Harga</b></div>
+					<div class="col" align="center"><b>Satuan</b></div>
+					<div class="col" align="left"><b>Lokasi</b></div>
+				</div>
+				<div class="row" ng-repeat="hargaCentraProduksi in hargaCentraProduksiList">
+					<div class="col col-10" align="left">{{ ($index+1) }}</div>
+					<div class="col" align="left">{{ hargaCentraProduksi.komoditas.nama}}</div>
+					<div class="col" align="right">{{ hargaCentraProduksi.harga | currencyIDR}}</div>
+					<div class="col" align="center">{{ hargaCentraProduksi.perSatuan }}</div>
+					<div class="col" align="left">{{ hargaCentraProduksi.lokasi.nama }}</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="item item-divider">
+				Informasi Harga Komunitas di Centra Pasar <strong style="color:green">NASIONAL</strong> Hari Ini {{ dateToday | date: 'dd/mm/yyyy'}}
+			</div>
+			<div class="item item-text-wrap">
+				<div class="row">
+					<div class="col col-10" align="left"><b>No</b></div>
+					<div class="col" align="left"><b>Komoditas</b></div>
+					<div class="col" align="right"><b>Harga</b></div>
+					<div class="col" align="center"><b>Satuan</b></div>
+					<div class="col" align="left"><b>Lokasi</b></div>
+				</div>
+				<div class="row" ng-repeat="hargaCentraPasar in hargaCentraPasarList">
+					<div class="col col-10" align="left">{{ ($index+1) }}</div>
+					<div class="col" align="left">{{ hargaCentraPasar.komoditas.nama}}</div>
+					<div class="col" align="right">{{ hargaCentraPasar.harga | currencyIDR}}</div>
+					<div class="col" align="center">{{ hargaCentraPasar.perSatuan }}</div>
+					<div class="col" align="left">{{ hargaCentraPasar.lokasi.nama }}</div>
+				</div>
+			</div>
+		</div>
+		<label class="item item-input">
+			<button class="button button-block button-positive" ng-click="btnKembali()">Kembali</button>
+		</label>
+	</ion-content>
+</ion-view>

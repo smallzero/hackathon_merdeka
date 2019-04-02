@@ -1,0 +1,2 @@
+C:\Users\Mamat\__workspace\heckathon_merdeka\trunk\android-frontend\pakopang\platforms\android\build\intermediates\classes\debug
+C:\Users\Mamat\__workspace\heckathon_merdeka\trunk\android-frontend\pakopang\platforms\android\build\intermediates\pre-dexed\debug\classes-e1fa685b74ef4959c62679b909e298d22ddc31a1.jar

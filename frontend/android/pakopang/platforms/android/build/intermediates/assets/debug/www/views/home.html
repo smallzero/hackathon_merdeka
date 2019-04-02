@@ -1,0 +1,59 @@
+<ion-view tittle="Pakopang - Pantau Komoditas Pangan">
+	<ion-header-bar align-title="center" class="bar-positive">
+		<div class="buttons">
+			<button class="button icon ion-navicon" ng-click="doSetting()"></button>
+		</div>
+		<h1 class="title">Pakopang - Pantau Komoditas Pangan</h1>
+	</ion-header-bar>
+	<ion-content ng-controller="HomeController">
+		<div class="card">
+			<div class="item item-divider">
+				Informasi Harga Rata-rata Komoditas <strong style="color:green">NASIONAL</strong> Hari Ini  {{ dateToday | date: 'dd/mm/yyyy'}}
+			</div>
+			<div class="item item-text-wrap">
+				<div class="row">
+					<div class="col col-10" align="left"><b>No</b></div>
+					<div class="col" align="left"><b>Komoditas</b></div>
+					<div class="col" align="right"><b>Harga Normal menurut Pemerintah</b></div>
+					<div class="col" align="right"><b>Harga Saat Ini</b></div>
+					<div class="col col-10"></div>
+				</div>
+				<div class="row">
+					<div class="col col-10" align="left">1</div>
+					<div class="col" align="left">Beras - IR (/1kg)</div>
+					<div class="col" align="right">8.000,00</div>
+					<div class="col" align="right">8.000,00</div>
+					<div class="col col-10"><i class="ion-minus-round stable"></i></div>
+				</div>
+				<div class="row">
+					<div class="col col-10" align="left">2</div>
+					<div class="col" align="left">Beras - Rojolele (/1kg)</div>
+					<div class="col" align="right">14.000,00</div>
+					<div class="col" align="right"><strong style="color:green">13.750,00</strong></div>
+					<div class="col col-10"><i class="ion-arrow-graph-down-right balanced"></i></div>
+				</div>
+				<div class="row">
+					<div class="col col-10" align="left">3</div>
+					<div class="col" align="left">Daging - Rendang(/1kg)</div>
+					<div class="col" align="right">90.000,00</div>
+					<div class="col" align="right"><strong style="color:red">130.750,00</strong></div>
+					<div class="col col-10"><i class="ion-arrow-graph-up-right assertive"></i></div>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="item item-divider">
+				Ayo Aksi untuk Bangsa!
+			</div>
+		  	<div class="item item-text-wrap">
+				<button class="button icon-left ion-compose button-block button-positive" ng-click="goReportHarga()">Lapor Harga</button>
+				<button class="button icon-left ion-thumbsdown button-block button-positive" ng-click="goLaporKecurangan()">Lapor Kecurangan</button>
+				<button class="button icon-left ion-android-close button-block button-positive" ng-click="doSignOut()">Sign Out</button>
+				<!--
+				<button class="button icon-left ion-ios-download-outline button-block button-positive">Application Update</button>
+				-->
+		  	</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

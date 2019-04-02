@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Mamat\__workspace\heckathon_merdeka\trunk\android-frontend\pakopang\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7e688db154ffe3b6a8acbc7162d50a4a4d6acb83">
+        <dex dex="C:\Users\Mamat\__workspace\heckathon_merdeka\trunk\android-frontend\pakopang\platforms\android\build\intermediates\pre-dexed\debug\classes-e1fa685b74ef4959c62679b909e298d22ddc31a1.jar" />
+    </item>
+
+</items>
